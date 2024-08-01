@@ -1,0 +1,25 @@
+version: '3'
+services:
+  Qwen-7B-Chat-vllm:
+    image: vllm/vllm-openai:latest
+    shm_size: 8gb
+    ulimits:
+      stack: 67108864
+      memlock: -1
+    restart: always
+    ipc: host
+    command: --model=/data/model/Qwen-7b-chat --tensor-parallel-size 2 --dtype=auto --trust-remote-code
+    volumes:
+      - "/mnt/hf_models/Qwen-7B-Chat:/data/model/Qwen-7B-Chat"
+    environment:
+      - HF_ENDPOINT=https://hf-mirror.com
+    ports:
+      - "8089:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
