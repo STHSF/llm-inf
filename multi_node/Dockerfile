@@ -1,3 +1,4 @@
+#  参考 https://www.xiaoiluo.com/article/vllm-docker-server
 # 选用一个基础镜像，就像是选择一个好的起点，这里我们用了 NVIDIA 的 CUDA 镜像，因为我们要做的事情需要大量的计算力。
 ARG base=nvcr.io/nvidia/cuda:12.2.0-devel-ubi8
 

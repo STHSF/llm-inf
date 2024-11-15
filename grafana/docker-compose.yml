@@ -9,7 +9,7 @@ services:
     ports:
       - "9090:9090"   # the default port used by Prometheus
     volumes:
-      - /mnt/hf_models/qwen-inf/grafana/prometheus.yaml:/etc/prometheus/prometheus.yml # mount Prometheus config file
+      - /home/liyu/workshop/LLM/llm-inf/grafana/prometheus.yaml:/etc/prometheus/prometheus.yml # mount Prometheus config file
 
   grafana:
     image: grafana/grafana:latest

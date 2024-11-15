@@ -1,3 +1,5 @@
+# 参考 https://www.xiaoiluo.com/article/vllm-gpu-ray-multigpu
+
 sudo docker run  \
     --name llm-ray-head \ # 容器名
     --gpus all \ # 使用所有可用的 GPU 设备

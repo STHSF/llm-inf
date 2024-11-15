@@ -1,3 +1,5 @@
+# 参考 https://geeksuper.cn/archives/vllm-docker
+
 version: '3'
 services:
   Qwen-7B-Chat-vllm:
