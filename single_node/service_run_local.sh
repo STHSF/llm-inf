@@ -38,6 +38,8 @@ current_time=$(date +"%Y-%m-%d-%H:%M:%S")
 log_file="${log_path}/${model_name}_${current_time}.log"
 
 # 模型启动
+export VLLM_CONFIGURE_LOGGING=0
+
 export CUDA_VISIBLE_DEVICES=1
 python3 -m vllm.entrypoints.openai.api_server \
 	--port 8090 \
