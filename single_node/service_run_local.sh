@@ -38,12 +38,14 @@ current_time=$(date +"%Y-%m-%d-%H:%M:%S")
 log_file="${log_path}/${model_name}_${current_time}.log"
 
 # 模型启动
+export VLLM_CONFIGURE_LOGGING=0
+
 export CUDA_VISIBLE_DEVICES=1
 python3 -m vllm.entrypoints.openai.api_server \
-	--port 8090 \
-	--model $model_path \
-	--served-model-name $model_name \
-	--trust-remote-code \
-	--tensor-parallel-size 1  \
-	--gpu-memory-utilization 1.0 \
-	--enforce-eager > ${log_file} 2>&1
+    --port 8090 \
+    --model $model_path \
+    --served-model-name $model_name \
+    --trust-remote-code \
+    --tensor-parallel-size 1  \
+    --gpu-memory-utilization 1.0 \
+    --enforce-eager > ${log_file} 2>&1
