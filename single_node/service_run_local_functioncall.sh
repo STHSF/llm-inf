@@ -46,4 +46,6 @@ python3 -m vllm.entrypoints.openai.api_server \
 	--trust-remote-code \
 	--tensor-parallel-size 1  \
 	--gpu-memory-utilization 1.0 \
-	--enforce-eager > ${log_file} 2>&1
+	--enforce-eager \
+	--enable-auto-tool-choice \
+	--tool-call-parser hermes > ${log_file} 2>&1

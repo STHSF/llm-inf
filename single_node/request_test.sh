@@ -1,5 +1,5 @@
-curl http://192.168.11.37:18091/v1/chat/completions  -H "Content-Type: application/json" -d '{
-   "model": "qwen2-7b",
+curl http://192.168.11.37:18089/v1/chat/completions  -H "Content-Type: application/json" -d '{
+   "model": "qwen2.5-7b",
    "messages": [
         {
             "role": "system",
@@ -13,5 +13,5 @@ curl http://192.168.11.37:18091/v1/chat/completions  -H "Content-Type: applicati
         {
             "role":"user",
             "content":"对于低空经济概念板块，券商的观点是看好还是看空？"}],
-   "stream":"false"
+   "stream":"False"
    }'
