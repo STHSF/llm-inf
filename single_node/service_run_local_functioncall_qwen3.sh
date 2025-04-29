@@ -14,7 +14,7 @@ else
     echo "Conda is initialized and available."
 fi
 
-
+# 设置日志路径
 log_path="/workshop/src/logs/llm"
 if [ ! -d "$log_path" ]; then
     echo "log directory does not exist. Creating directory..."
@@ -23,10 +23,8 @@ else
     echo "log path: ${log_path}"
 fi
 
-
 model_path="/workshop/models"
 # model_name="qwen3-8b"
-# model_name="qwen2.5-7b"
 model_name=$1
 
 if [ ! -d "$model_path" ]; then
