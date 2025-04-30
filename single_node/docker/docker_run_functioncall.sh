@@ -3,7 +3,7 @@
 PROJECT_NAME="qwen2.5_functioncall_llm_model"
 PROHECT_PATH="/home/liyu/workshop/LLM/llm-inf"
 MODEL_PATH="/mnt/hf_models/Qwen2.5-7B-Instruct"
-MODEL_NAME="qwen3-8b"
+MODEL_NAME="qwen2.5-7b"
 SERVICE_PORT=18089
 
 sudo docker run -d -it --runtime nvidia --gpus all \
