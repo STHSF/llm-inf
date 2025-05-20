@@ -46,7 +46,7 @@ python3 -m vllm.entrypoints.openai.api_server \
 	--trust-remote-code \
 	--tensor-parallel-size 1 \
 	--max_num_seqs 512 \
-	--max_model_len 4096 \
+	--max_model_len 20480 \
 	--gpu-memory-utilization 0.9 \
 	--enforce-eager \
 	--enable-auto-tool-choice \
