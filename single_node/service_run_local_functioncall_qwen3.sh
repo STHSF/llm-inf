@@ -26,6 +26,8 @@ fi
 model_path="/workshop/models"
 # model_name="qwen3-8b"
 model_name=$1
+tensor_parallel_size=$2
+max_model_len=$3
 
 if [ ! -d "$model_path" ]; then
     echo "model directory does not exist."
@@ -44,9 +46,9 @@ python3 -m vllm.entrypoints.openai.api_server \
 	--model $model_path \
 	--served-model-name $model_name \
 	--trust-remote-code \
-	--tensor-parallel-size 1 \
+	--tensor-parallel-size $tensor_parallel_size \
 	--max_num_seqs 512 \
-	--max_model_len 20480 \
+	--max_model_len $max_model_len \
 	--gpu-memory-utilization 0.9 \
 	--enforce-eager \
 	--enable-auto-tool-choice \
