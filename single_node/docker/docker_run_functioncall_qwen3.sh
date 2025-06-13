@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# 37
 PROJECT_NAME="qwen3_llm_20480"
 PROHECT_PATH="/home/liyu/workshop/LLM/llm-inf"
 MODEL_PATH="/mnt/hf_models/Qwen3-8B"
@@ -7,6 +8,15 @@ MODEL_NAME="qwen3_8b"
 SERVICE_PORT=18093
 TENSOR_PARA_SIZE=1
 MAX_MODEL_LEN=20480
+
+# 65
+## PROJECT_NAME="qwen3_8b_llm_40960"
+## PROHECT_PATH="/home/liyu/workshop/LLM/llm-inf"
+## MODEL_PATH="/mnt/192.168.11.37-nfs-data/hf_models/Qwen3-8B"
+## MODEL_NAME="qwen3-8b"
+## SERVICE_PORT=18083
+## TENSOR_PARA_SIZE=2
+## AX_MODEL_LEN=400960
 
 sudo docker run -d -it --runtime nvidia --gpus all \
         --restart=always \

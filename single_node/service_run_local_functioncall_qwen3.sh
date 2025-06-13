@@ -24,7 +24,6 @@ else
 fi
 
 model_path="/workshop/models"
-# model_name="qwen3-8b"
 model_name=$1
 tensor_parallel_size=$2
 max_model_len=$3
@@ -40,7 +39,7 @@ current_time=$(date +"%Y-%m-%d-%H:%M:%S")
 log_file="${log_path}/${model_name}_${current_time}.log"
 
 # 模型启动
-export CUDA_VISIBLE_DEVICES=1
+# export CUDA_VISIBLE_DEVICES=1
 python3 -m vllm.entrypoints.openai.api_server \
 	--port 8090 \
 	--model $model_path \
