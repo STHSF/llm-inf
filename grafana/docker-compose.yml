@@ -10,6 +10,9 @@ services:
       - "9090:9090"   # the default port used by Prometheus
     volumes:
       - /home/liyu/workshop/LLM/llm-inf/grafana/prometheus.yaml:/etc/prometheus/prometheus.yml # mount Prometheus config file
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--web.enable-lifecycle"
 
   grafana:
     image: grafana/grafana:latest
