@@ -7,4 +7,8 @@ scrape_configs:
   - job_name: vllm
     static_configs:
       - targets:
-          - 'host.docker.internal:8099'
+          - 'host.docker.internal:18093'
+  - job_name: vllm2
+    static_configs:
+      - targets:
+          - '192.168.11.65:18083'
